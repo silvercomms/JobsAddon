@@ -46,7 +46,6 @@ public class JobsManager {
         if (tag.contains("BrewerLevel", 99)) {
             // Job Level
             this.brewerLevel = tag.getInt("BrewerLevel");
-            this.builderLevel = tag.getInt("BuilderLevel");
             this.farmerLevel = tag.getInt("FarmerLevel");
             this.fisherLevel = tag.getInt("FisherLevel");
             this.lumberjackLevel = tag.getInt("LumberjackLevel");
@@ -55,7 +54,6 @@ public class JobsManager {
             this.warriorLevel = tag.getInt("WarriorLevel");
             // Job XP
             this.brewerXP = tag.getInt("BrewerXP");
-            this.builderXP = tag.getInt("BuilderXP");
             this.farmerXP = tag.getInt("FarmerXP");
             this.fisherXP = tag.getInt("FisherXP");
             this.lumberjackXP = tag.getInt("LumberjackXP");
@@ -76,7 +74,6 @@ public class JobsManager {
     public void writeNbt(NbtCompound tag) {
         // Job Level
         tag.putInt("BrewerLevel", this.brewerLevel);
-        tag.putInt("BuilderLevel", this.builderLevel);
         tag.putInt("FarmerLevel", this.farmerLevel);
         tag.putInt("FisherLevel", this.fisherLevel);
         tag.putInt("LumberjackLevel", this.lumberjackLevel);
@@ -85,7 +82,6 @@ public class JobsManager {
         tag.putInt("WarriorLevel", this.warriorLevel);
         // Job XP
         tag.putInt("BrewerXP", this.brewerXP);
-        tag.putInt("BuilderXP", this.builderXP);
         tag.putInt("FarmerXP", this.farmerXP);
         tag.putInt("FisherXP", this.fisherXP);
         tag.putInt("LumberjackXP", this.lumberjackXP);
@@ -135,8 +131,6 @@ public class JobsManager {
         switch (string) {
         case "brewer":
             return this.brewerLevel;
-        case "builder":
-            return this.builderLevel;
         case "farmer":
             return this.farmerLevel;
         case "fisher":
@@ -189,8 +183,6 @@ public class JobsManager {
         switch (string) {
         case "brewer":
             return this.brewerXP;
-        case "builder":
-            return this.builderXP;
         case "farmer":
             return this.farmerXP;
         case "fisher":

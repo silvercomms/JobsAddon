@@ -50,6 +50,9 @@ public class JobsScreen extends CottonClientScreen implements Tab {
 
         for (int i = 0; i < 2; i++)
             for (int u = 0; u < 4; u++) {
+                if (i == 0 && u == 2) {
+                    continue;
+                }
                 DrawableHelper.drawTexture(matrices, scaledWidth - 88 + i * 95, scaledHeight - 31 + u * 41, 81, 5, 0F, 0F, 81, 5, 256, 256);
                 jobsManager = this.client != null && this.client.player != null ? ((JobsManagerAccess) this.client.player).getJobsManager() : null;
                 if (jobsManager != null) {
