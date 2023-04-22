@@ -1,7 +1,10 @@
 package net.jobsaddon.mixin.block;
 
+import java.util.Comparator;
 import java.util.List;
 
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -60,6 +63,12 @@ public class BlockMixin {
                     JobsServerPacket.writeS2CJobXPPacket((ServerPlayerEntity) player, "lumberjack", xpCount);
             }
             if (state.getBlock() instanceof PlantBlock && ((JobsManagerAccess) player).getJobsManager().isEmployedJob("farmer") && ((PlayerAccess) player).setLastBlockId(pos, false, 0)) {
+                if (state.getEntries().entrySet().stream()
+                        .filter(kv -> kv.getKey().getName().equals("age"))
+                        .filter(kv -> kv.getKey() instanceof IntProperty)
+                        .anyMatch(kv -> ((Integer) kv.getValue()).compareTo(((IntProperty)kv.getKey()).getValues().stream().max(Comparator.naturalOrder()).orElse(0)) != 0)) {
+                    return;
+                }
                 int xpCount = 0;
                 List<ItemStack> list = Block.getDroppedStacks(state, (ServerWorld) world, pos, null);
                 for (int i = 0; i < list.size(); i++)
