@@ -49,7 +49,7 @@ public class JobsGui extends LightweightGuiDescription {
         JobButton smitherButton = new JobButton();
         JobButton warriorButton = new JobButton();
 
-        root.add(brewerButton, 102, 170);
+        root.add(brewerButton, 7, 129);
         root.add(farmerButton, 7, 88);
         root.add(fisherButton, 7, 170);
         root.add(lumberjackButton, 7, 47);
@@ -80,7 +80,7 @@ public class JobsGui extends LightweightGuiDescription {
         root.add(warriorIcon, 107, 93, 14, 14);
         root.add(smitherIcon, 107, 134, 14, 14);
         root.add(fisherIcon, 12, 175, 14, 14);
-        root.add(brewerIcon, 107, 175, 14, 14);
+        root.add(brewerIcon, 12, 134, 14, 14);
 
         // Job Title
         WLabel brewerTitle = new WLabel(jobTitle("brewer"), 0xFFFFFF);
@@ -97,7 +97,7 @@ public class JobsGui extends LightweightGuiDescription {
         root.add(warriorTitle, 125, 92);
         root.add(smitherTitle, 125, 133);
         root.add(fisherTitle, 30, 174);
-        root.add(brewerTitle, 125, 174);
+        root.add(brewerTitle, 30, 133);
 
         // Job Level
         WDynamicLabel brewerLabel = new WDynamicLabel(() -> "" + Text.translatable("text.jobsaddon.jobLevel", jobsManager.getJobLevel("brewer"), ConfigInit.CONFIG.jobMaxLevel).getString(), 0xFFFFFF);
@@ -117,7 +117,7 @@ public class JobsGui extends LightweightGuiDescription {
         root.add(warriorLabel, 137, 107);
         root.add(smitherLabel, 137, 148);
         root.add(fisherLabel, 42, 189);
-        root.add(brewerLabel, 137, 189);
+        root.add(brewerLabel, 42, 148);
 
         WDynamicLabel employedTimeLabel = new WDynamicLabel(() -> {
 

@@ -24,7 +24,7 @@ import java.util.Objects;
 public class JobsScreen extends CottonClientScreen implements Tab {
 
     // Specific order for rendering
-    private final List<String> jobNames = new ArrayList<String>(List.of("lumberjack", "farmer", "builder", "fisher", "miner", "warrior", "smither", "brewer"));
+    private final List<String> jobNames = new ArrayList<String>(List.of("lumberjack", "farmer", "brewer", "fisher", "miner", "warrior", "smither", "brewer"));
     @Nullable
     private JobsManager jobsManager;
 
@@ -50,7 +50,7 @@ public class JobsScreen extends CottonClientScreen implements Tab {
 
         for (int i = 0; i < 2; i++)
             for (int u = 0; u < 4; u++) {
-                if (i == 0 && u == 2) {
+                if (i == 1 && u == 3) {
                     continue;
                 }
                 DrawableHelper.drawTexture(matrices, scaledWidth - 88 + i * 95, scaledHeight - 31 + u * 41, 81, 5, 0F, 0F, 81, 5, 256, 256);
